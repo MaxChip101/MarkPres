@@ -1,10 +1,7 @@
 package main
 
 import (
-	"fmt"
-
 	"golang.org/x/term"
-	"rsc.io/quote"
 )
 
 func GetTerminalSize() (int, int, error) {
@@ -12,6 +9,10 @@ func GetTerminalSize() (int, int, error) {
 	return width, height, err
 }
 
+/*
+this function takes a slide and renders on the terminal depending on the markdown ast in the slide
+returns nothing as it doesn't need to return anything
+*/
 func Render(slide Slide) {
-	fmt.Println(quote.Go())
+
 }

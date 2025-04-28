@@ -4,6 +4,8 @@ import (
 	"log"
 	"os"
 	"strings"
+
+	"golang.org/x/term"
 )
 
 func main() {
@@ -25,5 +27,14 @@ func main() {
 		return
 	}
 
-	GetMarkdownContent(file)
+	slides, err := GetMarkdownSlides(file)
+
+	// convert to raw mode for input
+	old_state, err := term.MakeRaw(int(os.Stdin.Fd()))
+	if err != nil {
+		log.Fatal(err)
+		return
+	}
+	defer term.Restore(int(os.Stdin.Fd()), old_state)
+
 }
