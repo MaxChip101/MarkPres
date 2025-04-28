@@ -12,6 +12,6 @@ func GetTerminalSize() (int, int, error) {
 	return width, height, err
 }
 
-func Render() {
+func Render(slide Slide) {
 	fmt.Println(quote.Go())
 }

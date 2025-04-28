@@ -8,6 +8,9 @@ import (
 	"github.com/yuin/goldmark/text"
 )
 
+type Slide struct {
+}
+
 func GetMarkdownContent(file_name string) {
 
 	contentBytes, err := os.ReadFile(file_name)
